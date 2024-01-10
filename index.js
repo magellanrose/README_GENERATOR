@@ -20,9 +20,10 @@ const questions = [{
     name: 'usage',
     message:'what is the usage information?'
 },{
-    type: 'input',
+    type: 'list',
     name: 'license',
-    message:'what is the license?'
+    message:'please choose a license?',
+    choices: ['MIT']
 },{
     type: 'input',
     name: 'contributing',
@@ -40,7 +41,7 @@ const questions = [{
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    generateMarkdown()
+    generateMarkdown(answers);
 }
 
 // TODO: Create a function to initialize app
@@ -48,16 +49,20 @@ function init() {
  inquirer
   .prompt(questions)
   .then((answers) => {
-    console.log(answers)
-
+    const makeReadMe = generateMarkdown(answers);
+    fs.writeFile('README.md', makeReadMe, (err) => {
+        if(err){
+            console.log('Error making README.md file', err);
+        }
+    })
+    // const badgeImageURL = `![License]((https://img.shields.io/badge/License-${answers.license}-blue.svg))`
+    // console.log(badgeImageURL)
+    // console.log(answers);
     //writeToFile('README.md', data) //data equals to the user inputs
-    // Use user feedback for... whatever!!
   })
   .catch((error) => {
     if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
     } else {
-      // Something else went wrong
     }
   });
 }
