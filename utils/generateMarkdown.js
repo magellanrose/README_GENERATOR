@@ -19,13 +19,14 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
-  ## Description
-  ## Table of Contents
-  ## Installation
-  ## Usgae
-  ## Contributing
-  ## Tests
-  ## Questions
+  # Title ${answers.title}
+  ## Description ${answers.description}
+  ## Table of Contents ${answers.table_of_contents}
+  ## Usgae ${answers.usage}
+  ## License ${answers.license}
+  ## Contributing ${answers.contributing}
+  ## Tests ${answers.tests}
+  ## Questions ${answers.questions}
 `;
 }
 
