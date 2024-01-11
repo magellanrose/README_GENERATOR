@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 const questions = [{
     type: 'input',
@@ -42,7 +42,7 @@ const questions = [{
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    generateMarkdown(answers);
+    generateMarkdown(data);
 }
 
 // TODO: Create a function to initialize app
@@ -54,6 +54,8 @@ function init() {
     fs.writeFile('README.md', makeReadMe, (err) => {
         if(err){
             console.log('Error making README.md file', err);
+        } else{
+            console.log('README.md file created successfully.')
         }
     })
     // const badgeImageURL = `![License]((https://img.shields.io/badge/License-${answers.license}-blue.svg))`
