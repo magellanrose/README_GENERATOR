@@ -51,7 +51,7 @@ function writeToFile(fileName, data) {
             console.log('README.md file created successfully.')
         }
     })
-    //generateMarkdown(data);
+
 }
 
 // TODO: Create a function to initialize app
@@ -60,18 +60,6 @@ function init() {
         .prompt(questions)
         .then((answers) => {
             const makeReadMe = generateMarkdown(answers);
-            // fs.writeFile('./README.md', makeReadMe, (err) => {
-            //     if(err){
-            //         console.log('Error making README.md file', err);
-            //     } else{
-            //         console.log('README.md file created successfully.')
-            //     }
-            // })
-            // const badgeImageURL = `![License]((https://img.shields.io/badge/License-${answers.license}-blue.svg))`
-            // console.log(badgeImageURL)
-            // console.log(answers);
-            //writeToFile('README.md', data) //data equals to the user inputs
-            writeToFile('./utils/README.md', makeReadMe);
         })
         .catch((error) => {
             if (error.isTtyError) {
