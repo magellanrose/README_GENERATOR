@@ -1,7 +1,9 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+
 const generateMarkdown = require('./utils/generateMarkdown.js');
+
 // TODO: Create an array of questions for user input
 const questions = [{
     type: 'input',
@@ -24,7 +26,7 @@ const questions = [{
     type: 'list',
     name: 'license',
     message: 'please choose a license?',
-    choices: ['MIT']
+    choices: ['MIT', 'Apache 2.0 License', 'Boost Software License 1.0']
 }, {
     type: 'input',
     name: 'contributing',
@@ -49,7 +51,7 @@ function writeToFile(fileName, data) {
             console.log('README.md file created successfully.')
         }
     })
-    // generateMarkdown(data);
+    //generateMarkdown(data);
 }
 
 // TODO: Create a function to initialize app
@@ -69,7 +71,7 @@ function init() {
             // console.log(badgeImageURL)
             // console.log(answers);
             //writeToFile('README.md', data) //data equals to the user inputs
-            writeToFile('./README.md', makeReadMe);
+            writeToFile('./utils/README.md', makeReadMe);
         })
         .catch((error) => {
             if (error.isTtyError) {
