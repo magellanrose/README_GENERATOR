@@ -9,5 +9,7 @@ MIT </br>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Video
+[Recording of README Generator](https://drive.google.com/file/d/1ocD8VWjZeoI7hRdTYiXBsGHRHjlwXiyj/view)
+
 ## Github
 https://github.com/magellanrose/README_GENERATOR 
